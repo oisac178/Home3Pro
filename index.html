@@ -62,7 +62,7 @@
 		</div>
     <header class="header">
       <div class="container header__container">
-        <button class="btn-reset burger" aria-label="Открыть меню">
+        <button class="btn-reset burger" aria-label="Открыть меню" id="burger">
           <span class="burger__line"></span>
           <span class="burger__line"></span>
           <span class="burger__line"></span>
@@ -99,9 +99,9 @@
                 <img src="img/social.png" aria-hidden="true" alt="">
               </div>
               <div class="photos-wrap">
-                <img src="img/1.jpg" alt="Изображение 1">
-                <img src="img/2.jpg" alt="Изображение 2">
-                <img src="img/3.jpg" alt="Изображение 3">
+                <img src="img/1.jpg" alt="Изображение 1" class="photos-wrap1">
+                <img src="img/2.jpg" alt="Изображение 2" class="photos-wrap2">
+                <img src="img/3.jpg" alt="Изображение 3" class="photos-wrap3">
               </div>
             </div>
             <div class="photos__shape"></div>
@@ -113,6 +113,46 @@
       </section>
     </main>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script>
+    gsap.from(".hero__title", {
+      opacity: 0,
+      delay: 0.4,
+      y: 50,
+      ease: "expo",
+      duration: 1.5});
+    gsap.from(".hero__btn", {
+      opacity: 0,
+      delay: 0.4,
+      y: 50,
+      ease: "expo",
+      duration: 1.5});
+    gsap.from(".hero__descr", {
+      opacity: 0,
+      delay: 0.4,
+      ease: "expo.in",
+      duration: 1});
+    gsap.from(".photos-wrap1", {
+      opacity: 0,
+      delay: 1,
+      scale: 0.8,
+      duration: 0.8});
+    gsap.from(".photos-wrap2", {
+      opacity: 0,
+      delay: 1.2,
+      scale: 0.8,
+      duration: 0.7});
+    gsap.from(".photos-wrap3", {
+      opacity: 0,
+      delay: 1.4,
+      scale: 0.8,
+      duration: 0.7});
+    gsap.from(".photos__author", {
+      opacity: 0,
+      delay: 1.4,
+      duration: 1});
+  </script>
+  <script src="js/burger.js"></script>
 </body>
 
 </html>
