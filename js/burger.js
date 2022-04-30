@@ -3,20 +3,26 @@
 //        document.querySelector('.menu').classList.toggle('menu--open')
 //    })
 //  })
+gsap.to(".menu__nav", {
+  opacity: 0});
+gsap.to(".social", {
+  opacity: 0});
+gsap.to(".menu__right", {
+  opacity: 0});
+gsap.to(".close", {
+  opacity: 0});
 
   var tl = gsap.timeline({paused:true});
 
   tl.from(".menu__top", {
-    opacity: 0, y:-100, duration: 0.5});
+    opacity: 0, y:-200, duration: 0.5, ease: "power3.in"}, '-=0.2');
   tl.fromTo(".menu",
-    {delay: 0.4, opacity: 0, y:100, display: "none"},
-    {opacity: 1, y:0, ease: "circle", duration: 2, display: "block"});
+    {display: "none"},
+    {duration: 1.5, display: "block"}, '-=0.8');
 
-  tl.to(".menu__nav", {
-      opacity: 0});
-  tl.to(".social", {
-    opacity: 0});
-  tl.to(".menu__right", {
-    opacity: 0});
+   tl.fromTo(".menu__header",
+    {opacity: 0, y:100},
+    {opacity: 1, y:0, ease: "circle", duration: 1.2}, '-=0.5');
+
 
   burger.onclick = function() {tl.play();}
