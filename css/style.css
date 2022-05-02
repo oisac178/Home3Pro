@@ -295,9 +295,6 @@ img {
 
 .menu {
   display: none;
-}
-
-.menu__header {
   position: absolute;
   left: 0;
   top: 0;
